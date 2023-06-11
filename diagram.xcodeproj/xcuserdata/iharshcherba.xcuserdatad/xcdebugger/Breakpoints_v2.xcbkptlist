@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "DD23DBB8-731A-47C0-8275-D274A53B56DB"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1B70BCB3-95DB-47F7-BA33-D1263E726185"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "diagram/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "updateChart(g:y:r:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0A83CD6-D318-49EE-A9EA-60BEEF8C2860"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "diagram/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "updateChart(g:y:r:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D0A83CD6-D318-49EE-A9EA-60BEEF8C2860 - cfe29edc5c0e5098"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "diagram.ViewController.updateChart(g: Swift.Int, y: Swift.Int, r: Swift.Int) -&gt; ()"
+                  moduleName = "diagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iharshcherba/Downloads/diagram/diagram/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "1392">
+               </Location>
+               <Location
+                  uuid = "D0A83CD6-D318-49EE-A9EA-60BEEF8C2860 - cfe29edc5c0e5098"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "diagram.ViewController.updateChart(g: Swift.Int, y: Swift.Int, r: Swift.Int) -&gt; ()"
+                  moduleName = "diagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iharshcherba/Downloads/diagram/diagram/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "1080">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3812A425-25F5-4D13-B0AD-AD4816E459D5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "diagram/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "updateAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC5B6C67-E376-4586-B416-AA6303A3D4B2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "diagram/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "updateAction(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FC5B6C67-E376-4586-B416-AA6303A3D4B2 - be326d116c0da965"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "diagram.ViewController.updateAction(Any) -&gt; ()"
+                  moduleName = "diagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iharshcherba/Downloads/diagram/diagram/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "292">
+               </Location>
+               <Location
+                  uuid = "FC5B6C67-E376-4586-B416-AA6303A3D4B2 - be326d116c0da965"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "diagram.ViewController.updateAction(Any) -&gt; ()"
+                  moduleName = "diagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iharshcherba/Downloads/diagram/diagram/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
