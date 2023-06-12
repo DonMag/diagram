@@ -9,11 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
+	// remove stack views top constraints
+	//	"bar" stack views will be constrained to the bottom of the chart view
+	//	when values are entered, we'll set the heights of the bar "segments" (the arrangedSubviews)
+	//	relative to the chart view height
+	//	so they will "grow from the bottom"
+	
     @IBOutlet weak var chartView: UIView!
     @IBOutlet weak var firstStackView: UIStackView!
-    @IBOutlet weak var firstStackViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var secondStackView: UIStackView!
-    @IBOutlet weak var secondStackViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var firstGreenHeight: NSLayoutConstraint!
     @IBOutlet weak var firstYellowHeight: NSLayoutConstraint!
     @IBOutlet weak var firstRedHeight: NSLayoutConstraint!
@@ -34,55 +38,52 @@ class ViewController: UIViewController {
         updateChart(firstGreen: 10, firstYellow: 10, firstRed: 10, secondGreen: 10, secondYellow: 10, secondRed: 10)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        let firstGreen = getIntValue(from: firstGreenTextField)
-        let firstYellow = getIntValue(from: firstYellowTextField)
-        let firstRed = getIntValue(from: firstRedTextField)
-        
-        let secondGreen = getIntValue(from: secondGreenTextField)
-        let secondYellow = getIntValue(from: secondYellowTextField)
-        let secondRed = getIntValue(from: secondRedTextField)
-        
-        let firstHours = firstGreen + firstYellow + firstRed
-        let secondHours = secondGreen + secondYellow + secondRed
-        
-        let minHours = min(firstHours, secondHours)
-        let maxHours = max(firstHours, secondHours)
-        
-        let value = chartView.frame.height - (CGFloat(minHours) / CGFloat(maxHours) * chartView.frame.height)
-        
-        firstStackViewTopConstraint.constant = value
-        secondStackViewTopConstraint.constant = value
-    }
-    
-    
     func updateChart(firstGreen: Int, firstYellow: Int, firstRed: Int, secondGreen: Int, secondYellow: Int, secondRed: Int) {
         
-        let totalHeight = firstStackView.frame.height
-        let g = CGFloat(firstGreen)
-        let y = CGFloat(firstYellow)
-        let r = CGFloat(firstRed)
-        let sum = g + y + r
+		let fg = CGFloat(firstGreen)
+		let fy = CGFloat(firstYellow)
+		let fr = CGFloat(firstRed)
+		let firstSum = fg + fy + fr
+		
+		let sg = CGFloat(secondGreen)
+		let sy = CGFloat(secondYellow)
+		let sr = CGFloat(secondRed)
+		let secondSum = sg + sy + sr
+		
+		// get the MAX of the two sums
+		let maxSum: CGFloat = max(firstSum, secondSum)
+
+		// get the height of the "chartView" -- NOT the height of the stack views
+        let chartHeight = chartView.frame.height
         
-        let newGreenHeight = g/sum*totalHeight
-        let newYellowHeight = y/sum*totalHeight
-        let newRedHeight = r/sum*totalHeight
+		// calculate each segment "value"
+		//	as a percentage of the Max Sum
+		// then set each segment Height
+		//	as a percentage of the Chart View height
+		
+		// example...
+		//	first  values: 10 20 30	... firstSum  = 60
+		//	second values: 10 10 10	... secondSum = 30
+		//	maxSum = 60
+		//	first segment heights:
+		//		10 / 60 * chartHeight
+		//		20 / 60 * chartHeight
+		//		30 / 60 * chartHeight
+		//	second segment heights:
+		//		10 / 60 * chartHeight
+		//		10 / 60 * chartHeight
+		//		10 / 60 * chartHeight
+		
+        let newGreenHeight = fg / maxSum * chartHeight
+        let newYellowHeight = fy / maxSum * chartHeight
+        let newRedHeight = fr / maxSum * chartHeight
         firstGreenHeight.constant = newGreenHeight
         firstYellowHeight.constant = newYellowHeight
         firstRedHeight.constant = newRedHeight
         
-        let secondTotalHeight = secondStackView.frame.height
-        let secondGreen = CGFloat(secondGreen)
-        let secondYellow = CGFloat(secondYellow)
-        let secondRed = CGFloat(secondRed)
-        let secondSum = secondGreen + secondYellow + secondRed
-        
-        let newSecondGreenHeight = secondGreen / secondSum * secondTotalHeight
-        let newSecondYellowHeight = secondYellow / secondSum * secondTotalHeight
-        let newSecondRedHeight = secondRed / secondSum * secondTotalHeight
-
+        let newSecondGreenHeight = sg / maxSum * chartHeight
+        let newSecondYellowHeight = sy / maxSum * chartHeight
+        let newSecondRedHeight = sr / maxSum * chartHeight
         secondGreenHeight.constant = newSecondGreenHeight
         secondYellowHeight.constant = newSecondYellowHeight
         secondRedHeight.constant = newSecondRedHeight
